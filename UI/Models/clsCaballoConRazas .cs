@@ -21,19 +21,11 @@ namespace UI.Models
 
         #region Propiedades
 
-        public List<clsRaza> ListaRazas
+        public List<clsRaza> ListadoRazas
         {
             get
             {
                 return listadoRazas;
-            }
-
-            set 
-            {
-                if (value != null)
-                {
-                    listadoRazas = value;
-                }
             }
         }
 
@@ -61,8 +53,8 @@ namespace UI.Models
         {
             //(Añadir un constructor que reciba como parámetros un listado de razas, para rellenar la lista listadoRazas
             this.NombreCaballo = caballo.NombreCaballo;
-            this.IdCaballo = caballo.IdCaballo;
-            this.ListaRazas = razasCaballoParam;
+            //this.idCaballo = caballo.IdCaballo;
+            this.listadoRazas = razasCaballoParam;
         }   
 
 

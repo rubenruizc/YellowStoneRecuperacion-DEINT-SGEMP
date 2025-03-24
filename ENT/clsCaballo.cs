@@ -15,20 +15,13 @@
         #region Propiedades
 
 
-        // Propiedad autoimplementada
+        // Propiedad autoimplementada (si no quiero poner codigo, es decir ningún if por ejemplo)
         public int IdCaballo {
         
             get 
             {  return idCaballo; 
             } 
-            set 
-            {
-                if(value > 0)
-                {
-                    idCaballo = value;
-                }
-                
-            }
+
         }
 
         public string NombreCaballo {
@@ -70,7 +63,7 @@
 
             if(idCaballo > -1)
             {
-                this.IdCaballo = idCaballo;
+                this.idCaballo = idCaballo;
             }
 
             if (!string.IsNullOrEmpty(nombreCaballo))
