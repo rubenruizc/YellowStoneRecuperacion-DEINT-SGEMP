@@ -4,6 +4,8 @@
     {
         #region Atributos
 
+        private int idCaballo;
+
         private string nombreCaballo;
 
         private int idRaza;
@@ -14,7 +16,20 @@
 
 
         // Propiedad autoimplementada
-        public int IdCaballo { get; }
+        public int IdCaballo {
+        
+            get 
+            {  return idCaballo; 
+            } 
+            set 
+            {
+                if(value > 0)
+                {
+                    idCaballo = value;
+                }
+                
+            }
+        }
 
         public string NombreCaballo {
             get 

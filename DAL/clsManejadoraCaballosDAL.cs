@@ -22,12 +22,25 @@ namespace DAL
             return listaCaballos;
         }
 
-        public int actualizarRazaCaballoDAL (int idCaballo, int idRaza)
+        public static int actualizarRazaCaballoDAL(int idCaballo, int idRaza)
         {
-            return idCaballo;
+            int filasAfectadas = 0;
+
+            // Buscar el caballo en la lista
+            clsCaballo caballo = listaCaballos.FirstOrDefault(c => c.IdCaballo == idCaballo);
+
+            if (caballo != null)
+            {
+                // Actualzizar la raza
+                caballo.IdRaza = idRaza;
+                filasAfectadas = 1;
+            }
+
+            return filasAfectadas;
         }
-
-
-
     }
+
+
+
 }
+

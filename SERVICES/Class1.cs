@@ -1,4 +1,4 @@
-﻿namespace BL
+﻿namespace SERVICES
 {
     public class Class1
     {
