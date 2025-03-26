@@ -50,6 +50,7 @@ namespace UI.Models
         #region Constructores
 
         public clsCaballoConRazas(clsCaballo caballo, List<clsRaza> razasCaballoParam)
+            :base(caballo.IdCaballo,caballo.NombreCaballo,caballo.IdRaza)
         {
             //(Añadir un constructor que reciba como parámetros un listado de razas, para rellenar la lista listadoRazas
             this.NombreCaballo = caballo.NombreCaballo;

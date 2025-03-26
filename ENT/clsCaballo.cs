@@ -21,6 +21,7 @@
             get 
             {  return idCaballo; 
             } 
+            
 
         }
 

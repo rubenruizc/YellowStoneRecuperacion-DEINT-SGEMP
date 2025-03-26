@@ -27,7 +27,7 @@
                                        FontAttributes="Bold" />
                             
                             <Picker 
-                                        ItemsSource="{Binding ListaRazas}"
+                                        ItemsSource="{Binding ListadoRazas}"
                                         ItemDisplayBinding="{Binding NombreRaza}"
                                         SelectedItem="{Binding RazaSeleccionada, Mode=TwoWay}" />
                         </HorizontalStackLayout>
