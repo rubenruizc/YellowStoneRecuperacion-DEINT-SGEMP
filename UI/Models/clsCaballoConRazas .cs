@@ -54,8 +54,16 @@ namespace UI.Models
         {
             //(Añadir un constructor que reciba como parámetros un listado de razas, para rellenar la lista listadoRazas
             this.NombreCaballo = caballo.NombreCaballo;
-            //this.idCaballo = caballo.IdCaballo;
             this.listadoRazas = razasCaballoParam;
+
+            if(caballo.IdRaza == 0)
+            {
+                this.RazaSeleccionada = listadoRazas[0];
+            } else
+            {
+                this.razaSeleccionada = razasCaballoParam.Find(r => r.IdRaza == caballo.IdRaza);
+            }
+            
         }   
 
 

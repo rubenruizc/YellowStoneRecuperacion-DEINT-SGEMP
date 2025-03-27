@@ -48,18 +48,36 @@ namespace UI.VM
 
         public clsVM()
         {
-            // Inicializar la colección
-            listadoCaballosConRazas = new ObservableCollection<clsCaballoConRazas>();
-
-            // Obtener datos desde la capa BL
-            List<clsCaballo> caballos = clsManejadoraCaballosBL.obtenerTodosLosCaballosBL();
-            List<clsRaza> razas = clsManejadoraRazasBL.obtenerTodasLasRazasBL();
-
-            // Poblar la colección con objetos clsCaballoConRazas
-            foreach (var caballo in caballos)
+            try
             {
-                listadoCaballosConRazas.Add(new clsCaballoConRazas(caballo, razas));
+                // Inicializar la lista
+                listadoCaballosConRazas = new ObservableCollection<clsCaballoConRazas>();
+
+
+                // Obtener datos desde la capa BL
+                List<clsCaballo> caballos = clsManejadoraCaballosBL.obtenerTodosLosCaballosBL();
+                List<clsRaza> razas = clsManejadoraRazasBL.obtenerTodasLasRazasBL();
+
+                clsRaza razaPreterminada = new clsRaza(0, "SELECCIONE UNA OPCION");
+
+                // Para que aparezca en la primera línea la raza preterminada
+                razas.Insert(0,razaPreterminada);
+
+                
+
+
+                // Llenar lista con objetos clsCaballoConRazas
+                foreach (var caballo in caballos)
+                {
+                    clsCaballoConRazas caballoConRazas = new clsCaballoConRazas(caballo,razas);
+                    listadoCaballosConRazas.Add(caballoConRazas);
+                }
             }
+            catch (Exception ex)
+            {
+                // TODO: Avisar al usuario mediante un display alert que algo ha pasado con la BD
+            }
+            
         }
 
         #endregion

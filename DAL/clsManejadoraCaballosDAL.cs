@@ -9,7 +9,7 @@ namespace DAL
         {
             new clsCaballo(1,"Blue Note",0),
             new clsCaballo(2,"Star",0),
-            new clsCaballo(3,"Brandy",0),
+            new clsCaballo(3,"Brandy",2),
             new clsCaballo(4,"Lucky",0),
             new clsCaballo(5,"Apollo",0),
             new clsCaballo(6,"Scout",0),
