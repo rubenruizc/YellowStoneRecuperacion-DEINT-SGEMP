@@ -9,7 +9,7 @@ namespace DAL
         {
             new clsCaballo(1,"Blue Note",0),
             new clsCaballo(2,"Star",0),
-            new clsCaballo(3,"Brandy",2),
+            new clsCaballo(3,"Brandy",0),
             new clsCaballo(4,"Lucky",0),
             new clsCaballo(5,"Apollo",0),
             new clsCaballo(6,"Scout",0),
@@ -44,7 +44,7 @@ namespace DAL
             // Buscar el caballo en la lista
             clsCaballo caballo = listaCaballos.FirstOrDefault(c => c.IdCaballo == idCaballo);
 
-            if (caballo.IdRaza != idRaza)
+            if (caballo.IdRaza != idRaza && caballo != null)
             {
                 // Actualzizar la raza
                 caballo.IdRaza = idRaza;

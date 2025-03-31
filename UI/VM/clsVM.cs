@@ -72,6 +72,9 @@ namespace UI.VM
                     clsCaballoConRazas caballoConRazas = new clsCaballoConRazas(caballo,razas);
                     listadoCaballosConRazas.Add(caballoConRazas);
                 }
+
+                actualizar = new DelegateCommand(actualizar_execute);
+
             }
             catch (Exception ex)
             {
@@ -80,7 +83,28 @@ namespace UI.VM
             
         }
 
+
+
+
         #endregion
+
+        #region Métodos
+
+        private async void actualizar_execute()
+        {
+            int numFilasAfectadas = 0;
+
+            //TODO: Código que actualice la raza de los caballos cambiados
+            foreach(clsCaballoConRazas caballo in listadoCaballosConRazas)
+            {
+                numFilasAfectadas +=  clsManejadoraCaballosBL.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+            }
+
+            await Application.Current.MainPage.DisplayAlert("Enhorabuena", "Se han actualizado " + numFilasAfectadas + " caballos", "OK"); 
+        }
+
+        #endregion
+
 
         #region Notify
         public event PropertyChangedEventHandler PropertyChanged;

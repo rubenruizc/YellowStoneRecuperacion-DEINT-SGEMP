@@ -45,8 +45,8 @@
         </VerticalStackLayout>
         
     </ScrollView>
-        <!--<Button Text="✏️"
-    Command="{Binding ActualizarCommand }"
+        <Button Text="✏️"
+    Command="{Binding Actualizar }"
     BackgroundColor="Plum"
     TextColor="White"
     FontSize="Medium"
@@ -55,6 +55,6 @@
     HeightRequest="50"
     AbsoluteLayout.LayoutBounds="0.99, 0.89"
     AbsoluteLayout.LayoutFlags="PositionProportional"
-    />-->
+    />
     </AbsoluteLayout>
 </ContentPage>
