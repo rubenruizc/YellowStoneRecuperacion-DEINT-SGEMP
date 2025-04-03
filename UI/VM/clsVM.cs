@@ -55,8 +55,8 @@ namespace UI.VM
 
 
                 // Obtener datos desde la capa BL
-                List<clsCaballo> caballos = clsManejadoraCaballosBL.obtenerTodosLosCaballosBL();
-                List<clsRaza> razas = clsManejadoraRazasBL.obtenerTodasLasRazasBL();
+                List<clsCaballo> caballos = clsManejadoraCaballosBLBD.listadoCompletoCaballosBL();
+                List<clsRaza> razas = clsManejadoraRazasBLBD.listadoCompletoRazasBL();
 
                 clsRaza razaPreterminada = new clsRaza(0, "SELECCIONE UNA OPCION");
 
@@ -97,7 +97,14 @@ namespace UI.VM
             //TODO: Código que actualice la raza de los caballos cambiados
             foreach(clsCaballoConRazas caballo in listadoCaballosConRazas)
             {
-                numFilasAfectadas +=  clsManejadoraCaballosBL.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+                //Esto seria si es en local
+                //numFilasAfectadas +=  clsManejadoraCaballosBL.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+                
+                if(caballo.RazaSeleccionada.IdRaza != 0 && caballo.IdRaza != caballo.RazaSeleccionada.IdRaza)
+                {
+                    numFilasAfectadas += clsManejadoraCaballosBLBD.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+                }
+                
             }
 
             await Application.Current.MainPage.DisplayAlert("Enhorabuena", "Se han actualizado " + numFilasAfectadas + " caballos", "OK"); 

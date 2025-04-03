@@ -62,6 +62,11 @@ namespace ENT
             
         }
 
+        public clsRaza(int idRaza)
+        {
+            this.idRaza= idRaza;
+        }
+
         #endregion
 
     }

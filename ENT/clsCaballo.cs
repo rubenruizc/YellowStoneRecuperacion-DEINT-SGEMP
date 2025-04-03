@@ -80,6 +80,11 @@
             
         }
 
+        public clsCaballo(int idCaballo)
+        {
+            this.idCaballo = idCaballo ;
+        }
+
         #endregion
 
     }
