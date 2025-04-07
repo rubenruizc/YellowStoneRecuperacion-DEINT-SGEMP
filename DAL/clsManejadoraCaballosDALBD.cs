@@ -73,15 +73,14 @@ namespace DAL
         }
 
         /// <summary>
-        /// Función que actualiza los campos de una persona, según su id
-        /// <br></br>
-        /// Pre: Persona con nombre y apellidos rellenos, los demás campos opcionales
-        /// <br></br>
-        /// Post: Ninguna
+        /// Función que actualiza los campos de un caballo, según su id
+        /// Pre: caballo con idCaballo y idRaza rellenos, los demás campos opcionales
+        /// Post: Ninguno
         /// </summary>
-        /// <param name="persona">Objeto persona con los nuevos detalles</param>
-        /// <returns>Número de filas afectadas tras la actualización</returns>
-        public static int actualizarRazaCaballoDAL(int idCaballo, int idRaza)
+        /// <param name="idCaballo"></param>
+        /// <param name="idRaza"></param>
+        /// <returns></returns>
+        public static int   actualizarRazaCaballoDAL(int idCaballo, int idRaza)
         {
             int numeroFilasAfectadas = 0;
             SqlConnection conexion = new SqlConnection();

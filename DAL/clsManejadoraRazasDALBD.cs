@@ -11,11 +11,11 @@ namespace DAL
     public class clsManejadoraRazasDALBD
     {
         /// <summary>
-        /// Función que devuelve un listado de caballos de la base de datos de azure.
+        /// Función que devuelve un listado de razas de la base de datos de azure.
         /// Pre: Ninguna
         /// Post: Puede devolver un listado vacío, por algún error con la BD
         /// </summary>
-        /// <returns>Listado de caballos</returns>
+        /// <returns>Listado de razas</returns>
         public static List<clsRaza> listadoCompletoRazasDAL()
         {
             List<clsRaza> listadoRazas = new List<clsRaza>();

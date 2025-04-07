@@ -65,7 +65,7 @@ namespace UI.VM
 
                 
 
-
+                    
                 // Llenar lista con objetos clsCaballoConRazas
                 foreach (var caballo in caballos)
                 {
@@ -90,9 +90,14 @@ namespace UI.VM
 
         #region Métodos
 
+        /// <summary>
+        /// Método para actualizar los caballos
+        /// </summary>
         private async void actualizar_execute()
         {
             int numFilasAfectadas = 0;
+            bool actualizado = false;
+
 
             //TODO: Código que actualice la raza de los caballos cambiados
             foreach(clsCaballoConRazas caballo in listadoCaballosConRazas)
@@ -102,7 +107,21 @@ namespace UI.VM
                 
                 if(caballo.RazaSeleccionada.IdRaza != 0 && caballo.IdRaza != caballo.RazaSeleccionada.IdRaza)
                 {
-                    numFilasAfectadas += clsManejadoraCaballosBLBD.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+                    try
+                    {
+                        numFilasAfectadas += clsManejadoraCaballosBLBD.actualizarRazaCaballoBL(caballo.IdCaballo, caballo.RazaSeleccionada.IdRaza);
+                        actualizado = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("ERROR", "Ha ocurrido un error en la base de datos", "OK");
+                    }
+                    
+                }
+
+                if (actualizado)
+                {
+                    caballo.IdRaza = caballo.RazaSeleccionada.IdRaza;
                 }
                 
             }
